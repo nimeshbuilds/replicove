@@ -9,7 +9,7 @@ ARG VERSION=dev
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -trimpath -ldflags="-s -w" -o /operator ./cmd/operator
 RUN CGO_ENABLED=0 GOOS=$TARGETOS GOARCH=$TARGETARCH go build -trimpath -ldflags="-s -w -X main.version=$VERSION" -o /replicove ./cmd/replicove
 
-FROM postgres:17-bookworm@sha256:639ab7ceb90e13123085b741fb31ef493fba25463002f6da665352e7b534b652
+FROM postgres:18-bookworm@sha256:3725f4e2499eef5134592b3b4ab79a543ed7f8e533b05b5b637af926630f6650
 LABEL org.opencontainers.image.source="https://github.com/nimeshbuilds/replicove" \
       org.opencontainers.image.title="Replicove" \
       org.opencontainers.image.description="Disposable Kubernetes integration environments powered by vCluster" \

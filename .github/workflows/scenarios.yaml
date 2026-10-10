@@ -47,7 +47,7 @@ jobs:
         run: ./examples/scenarios/run.sh "$SCENARIO" "$VARIANT"
       - name: Retain scenario receipts and synthetic fixture evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: scenario-${{ matrix.scenario }}-${{ matrix.variant }}
           path: |

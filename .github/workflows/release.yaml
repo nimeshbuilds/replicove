@@ -87,7 +87,7 @@ jobs:
         env:
           RELEASE_IMAGE_DIGEST: ${{ steps.image.outputs.digest }}
         run: ./hack/release-artifacts.sh "$RELEASE_VERSION"
-      - uses: actions/upload-artifact@v7.0.1
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: replicove-release
           path: dist/${{ inputs.version }}/
@@ -143,7 +143,7 @@ jobs:
         run: ./hack/e2e-helm-existing.sh
       - name: Retain sanitized published-artifact test evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: release-verification
           path: |
@@ -184,7 +184,7 @@ jobs:
           ./hack/e2e-mirror.sh
       - name: Retain sanitized mirror release evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: release-mirror-verification-${{ matrix.initial }}
           path: .cache/mirror-e2e/run.*/artifacts/
@@ -224,7 +224,7 @@ jobs:
           ./hack/e2e-"$SUITE".sh
       - name: Retain sanitized testing module evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: release-testing-${{ matrix.suite }}
           path: .cache/${{ matrix.suite }}-e2e/run.*/artifacts/
@@ -273,7 +273,7 @@ jobs:
           ./hack/e2e-yaml.sh
       - name: Retain sanitized YAML release evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: release-yaml-verification
           path: .cache/yaml-e2e/run.*/artifacts/

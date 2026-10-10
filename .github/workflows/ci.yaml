@@ -45,7 +45,7 @@ jobs:
         run: make test-e2e
       - name: Retain sanitized lifecycle evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: live-vcluster-evidence
           path: .cache/e2e/run.*/artifacts/
@@ -81,7 +81,7 @@ jobs:
           REPLICOVE_INSTALLER: ${{ matrix.installer }}
       - name: Retain sanitized replica evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: replica-workflow-${{ strategy.job-index }}
           path: .cache/replication-e2e/run.*/artifacts/
@@ -100,7 +100,7 @@ jobs:
           ./hack/e2e-helm-existing.sh
       - name: Retain sanitized existing-vCluster installation evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: helm-existing
           path: .cache/helm-existing-e2e/run.*/artifacts/
@@ -128,7 +128,7 @@ jobs:
         run: ./hack/e2e-workload.sh "$WORKLOAD"
       - name: Retain sanitized workload evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: workload-${{ matrix.workload }}
           path: .cache/workload-e2e/run.*/artifacts/
@@ -146,7 +146,7 @@ jobs:
         run: ./hack/e2e-yaml.sh
       - name: Retain sanitized YAML evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: yaml-workflow
           path: .cache/yaml-e2e/run.*/artifacts/
@@ -174,7 +174,7 @@ jobs:
           ./hack/e2e-mirror.sh
       - name: Retain sanitized mirror lifecycle evidence
         if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: workload-mirror-evidence-${{ matrix.initial }}
           path: .cache/mirror-e2e/run.*/artifacts/
@@ -196,7 +196,7 @@ jobs:
           ./hack/fetch-helm.sh
           ./hack/e2e-chaos.sh
       - if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: chaos-workflow
           path: .cache/chaos-e2e/run.*/artifacts/
@@ -220,7 +220,7 @@ jobs:
           ./hack/fetch-helm.sh
           ./hack/e2e-database.sh
       - if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: database-workflow
           path: .cache/database-e2e/run.*/artifacts/
@@ -242,7 +242,7 @@ jobs:
           ./hack/fetch-helm.sh
           ./hack/e2e-testrun.sh
       - if: always()
-        uses: actions/upload-artifact@v7.0.1
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: test-runner-workflow
           path: .cache/testrun-e2e/run.*/artifacts/

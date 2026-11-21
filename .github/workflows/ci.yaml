@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -67,7 +67,7 @@ jobs:
             installer: cli
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -117,7 +117,7 @@ jobs:
         workload: [cert-manager, spark, trino, policy]
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -164,7 +164,7 @@ jobs:
       REPLICOVE_MIRROR_BASE: ${{ matrix.initial }}
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -187,7 +187,7 @@ jobs:
     timeout-minutes: 50
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -209,7 +209,7 @@ jobs:
     timeout-minutes: 50
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
@@ -233,7 +233,7 @@ jobs:
     timeout-minutes: 55
     steps:
       - uses: actions/checkout@v7.0.1
-      - uses: actions/setup-go@v7.0.0
+      - uses: actions/setup-go@v7.1.0
         with:
           go-version-file: go.mod
           cache: true
